@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maya — Real Dairy Customer Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a3d62;
+      --navy-deep: #062847;
+      --cream: #faf7f0;
+      --gold: #d4a017;
+      --green: #2a9d63;
+      --red: #d43d2a;
+      --grey: #6b7280;
+      --line: #e6e1d4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #faf7f0 0%, #f3ede0 100%);
+      color: var(--navy-deep);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .badge {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--grey);
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+    .container {
+      width: 100%;
+      max-width: 640px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--navy-deep);
+      margin-bottom: 16px;
+    }
+    h1 .accent { color: var(--navy); }
+    .sub {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--grey);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+    .call-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 10px 40px rgba(10, 61, 98, 0.06);
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--grey);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--grey);
+    }
+    .status.live .status-dot {
+      background: var(--green);
+      animation: pulse 1.5s infinite;
+    }
+    .status.connecting .status-dot { background: var(--gold); animation: pulse 0.8s infinite; }
+    .status.ended .status-dot { background: var(--red); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .call-btn {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: none;
+      background: var(--navy);
+      color: white;
+      cursor: pointer;
+      font-size: 0;
+      box-shadow: 0 8px 30px rgba(10, 61, 98, 0.35);
+      transition: all 0.2s ease;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .call-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(10, 61, 98, 0.45);
+    }
+    .call-btn:active { transform: translateY(0); }
+    .call-btn.live { background: var(--red); }
+    .call-btn.connecting { background: var(--gold); cursor: wait; }
+    .call-btn svg { width: 44px; height: 44px; }
+    .call-btn:disabled { opacity: 0.7; }
+    .call-label {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy-deep);
+    }
+    .call-hint {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--grey);
+    }
+    .suggestions {
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+    }
+    .suggestions-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--grey);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .chip {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: var(--navy-deep);
+      font-weight: 500;
+    }
+    .footer {
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--grey);
+    }
+    .footer a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    @media (max-width: 600px) {
+      h1 { font-size: 32px; }
+      .call-card { padding: 32px 20px; }
+      header { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-mark">RD</div>
+      Real Dairy Australia
+    </div>
+    <div class="badge">AI Customer Service · Demo</div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Speak to our AI agent</div>
+      <h1>Meet <span class="accent">Maya</span>.<br />Your dairy answers, in seconds.</h1>
+      <p class="sub">Maya is Real Dairy's AI customer service voice — she knows our products, our services, our facilities, and how to put you in touch with the right team. Click below to talk to her live in your browser.</p>
+
+      <div class="call-card">
+        <div class="status" id="status">
+          <span class="status-dot"></span>
+          <span id="status-text">Ready to call</span>
+        </div>
+
+        <button class="call-btn" id="callBtn" aria-label="Start call">
+          <svg id="iconPhone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </button>
+
+        <div class="call-label" id="callLabel">Call Maya</div>
+        <div class="call-hint" id="callHint">Mic access required · No phone number needed</div>
+
+        <div class="suggestions">
+          <div class="suggestions-title">Try asking</div>
+          <div class="chips">
+            <div class="chip">What products do you stock?</div>
+            <div class="chip">Tell me about your cheese facility</div>
+            <div class="chip">Do you offer contract packing?</div>
+            <div class="chip">Can you ship to Perth?</div>
+            <div class="chip">I need a quote for WPC 80</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    Built by <a href="https://www.automataai.com.au" target="_blank" rel="noopener">Automata AI</a> · Powered by Vapi
+  </footer>
+
+  <script type="module">
+    import Vapi from "https://esm.sh/@vapi-ai/web@2.3.1";
+
+    const PUBLIC_KEY = "b735e55e-9042-46f0-a474-c57e5c8ae2b1";
+    const ASSISTANT_ID = "c9bf2e7a-536c-466d-9d55-2a0d132f4fa8";
+
+    const vapi = new Vapi(PUBLIC_KEY);
+
+    const btn = document.getElementById("callBtn");
+    const statusEl = document.getElementById("status");
+    const statusText = document.getElementById("status-text");
+    const label = document.getElementById("callLabel");
+    const hint = document.getElementById("callHint");
+    const icon = document.getElementById("iconPhone");
+
+    const ICON_PHONE = `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`;
+    const ICON_HANGUP = `<path d="M22.27 14.66a18.92 18.92 0 0 0-20.54 0c-1.3.86-1.39 2.74-.18 3.74l1.5 1.25a2 2 0 0 0 2.4.1l2.65-1.77a2 2 0 0 0 .87-1.84l-.16-1.85a14 14 0 0 1 6.04 0l-.16 1.85a2 2 0 0 0 .87 1.84l2.65 1.77a2 2 0 0 0 2.4-.1l1.5-1.25c1.21-1 1.12-2.88-.18-3.74z"/>`;
+
+    let inCall = false;
+
+    function setState(state) {
+      statusEl.classList.remove("connecting", "live", "ended");
+      btn.classList.remove("connecting", "live");
+      if (state === "idle") {
+        statusText.textContent = "Ready to call";
+        label.textContent = "Call Maya";
+        hint.textContent = "Mic access required · No phone number needed";
+        icon.innerHTML = ICON_PHONE;
+        btn.disabled = false;
+      } else if (state === "connecting") {
+        statusEl.classList.add("connecting");
+        statusText.textContent = "Connecting…";
+        label.textContent = "Connecting";
+        hint.textContent = "Hang tight — Maya's coming on the line";
+        btn.classList.add("connecting");
+        btn.disabled = true;
+      } else if (state === "live") {
+        statusEl.classList.add("live");
+        statusText.textContent = "Live with Maya";
+        label.textContent = "End call";
+        hint.textContent = "Just speak naturally — she's listening";
+        icon.innerHTML = ICON_HANGUP;
+        btn.classList.add("live");
+        btn.disabled = false;
+      } else if (state === "ended") {
+        statusEl.classList.add("ended");
+        statusText.textContent = "Call ended";
+        label.textContent = "Call Maya again";
+        hint.textContent = "Thanks for trying Maya — refresh thoughts welcome";
+        icon.innerHTML = ICON_PHONE;
+        btn.disabled = false;
+        setTimeout(() => setState("idle"), 3500);
+      }
+    }
+
+    btn.addEventListener("click", async () => {
+      if (!inCall) {
+        try {
+          setState("connecting");
+          await vapi.start(ASSISTANT_ID);
+        } catch (e) {
+          console.error(e);
+          setState("idle");
+          alert("Couldn't start the call: " + (e.message || e));
+        }
+      } else {
+        vapi.stop();
+      }
+    });
+
+    vapi.on("call-start", () => { inCall = true; setState("live"); });
+    vapi.on("call-end", () => { inCall = false; setState("ended"); });
+    vapi.on("error", (e) => {
+      console.error("Vapi error:", e);
+      inCall = false;
+      setState("idle");
+    });
+
+    setState("idle");
+  </script>
+</body>
+</html>
