@@ -64,11 +64,7 @@
       top: 0;
       z-index: 50;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .logo { display: flex; align-items: center; gap: 12px; }
     .logo-mark {
       width: 36px; height: 36px;
       border-radius: 10px;
@@ -81,28 +77,10 @@
       box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.15);
       letter-spacing: -0.02em;
     }
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-    .logo-name {
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--navy-deep);
-      letter-spacing: -0.01em;
-    }
-    .logo-tag {
-      font-size: 11px;
-      color: var(--grey-500);
-      font-weight: 500;
-      margin-top: 1px;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-name { font-weight: 700; font-size: 15px; color: var(--navy-deep); letter-spacing: -0.01em; }
+    .logo-tag { font-size: 11px; color: var(--grey-500); font-weight: 500; margin-top: 1px; }
+    .header-right { display: flex; align-items: center; gap: 14px; }
     .header-badge {
       font-size: 12px;
       font-weight: 600;
@@ -130,11 +108,7 @@
       justify-content: center;
       padding: 56px 24px 32px;
     }
-    .container {
-      width: 100%;
-      max-width: 680px;
-      text-align: center;
-    }
+    .container { width: 100%; max-width: 680px; text-align: center; }
 
     /* ====== HERO ====== */
     .eyebrow {
@@ -224,10 +198,7 @@
       background: var(--grey-300);
       transition: background 0.3s ease;
     }
-    .status.live {
-      background: var(--green-soft);
-      color: var(--green);
-    }
+    .status.live { background: var(--green-soft); color: var(--green); }
     .status.live .status-dot { background: var(--green); animation: pulse 1.5s infinite; }
     .status.connecting { background: rgba(200, 154, 43, 0.12); color: var(--gold); }
     .status.connecting .status-dot { background: var(--gold); animation: pulse 0.8s infinite; }
@@ -235,14 +206,11 @@
     .status.ended .status-dot { background: var(--red); }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 currentColor; }
-      50% { opacity: 0.7; transform: scale(1.25); box-shadow: 0 0 0 6px transparent; }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.25); }
     }
 
-    .call-btn-wrap {
-      position: relative;
-      display: inline-block;
-    }
+    .call-btn-wrap { position: relative; display: inline-block; }
     .call-btn-wrap::before,
     .call-btn-wrap::after {
       content: '';
@@ -253,12 +221,8 @@
       opacity: 0;
       pointer-events: none;
     }
-    .call-btn-wrap.idle::before {
-      animation: ring 2.4s ease-out infinite;
-    }
-    .call-btn-wrap.idle::after {
-      animation: ring 2.4s 1.2s ease-out infinite;
-    }
+    .call-btn-wrap.idle::before { animation: ring 2.4s ease-out infinite; }
+    .call-btn-wrap.idle::after { animation: ring 2.4s 1.2s ease-out infinite; }
     @keyframes ring {
       0% { opacity: 0.5; transform: scale(1); }
       80%, 100% { opacity: 0; transform: scale(1.5); }
@@ -284,13 +248,8 @@
       box-shadow: 0 28px 70px rgba(6, 40, 71, 0.20), inset 0 1px 0 rgba(255,255,255,0.15);
     }
     .call-btn:active:not(:disabled) { transform: translateY(-1px) scale(1); }
-    .call-btn.live {
-      background: linear-gradient(135deg, var(--red) 0%, #9c2d1f 100%);
-    }
-    .call-btn.connecting {
-      background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 100%);
-      cursor: wait;
-    }
+    .call-btn.live { background: linear-gradient(135deg, var(--red) 0%, #9c2d1f 100%); }
+    .call-btn.connecting { background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 100%); cursor: wait; }
     .call-btn svg { width: 42px; height: 42px; }
     .call-btn:disabled { opacity: 0.85; }
 
@@ -309,11 +268,7 @@
     }
 
     /* ====== SUGGESTIONS ====== */
-    .suggestions {
-      margin-top: 36px;
-      padding-top: 28px;
-      border-top: 1px dashed var(--line);
-    }
+    .suggestions { margin-top: 36px; padding-top: 28px; border-top: 1px dashed var(--line); }
     .suggestions-title {
       font-size: 11px;
       font-weight: 700;
@@ -322,12 +277,7 @@
       letter-spacing: 0.12em;
       margin-bottom: 14px;
     }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .chip {
       background: var(--cream);
       border: 1px solid var(--line);
@@ -337,7 +287,6 @@
       color: var(--navy-deep);
       font-weight: 500;
       transition: all 0.18s ease;
-      cursor: default;
     }
     .chip:hover {
       background: white;
@@ -355,10 +304,7 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.45s forwards;
     }
-    .trust-item {
-      padding: 18px 12px;
-      text-align: center;
-    }
+    .trust-item { padding: 18px 12px; text-align: center; }
     .trust-num {
       font-family: 'Instrument Serif', serif;
       font-size: 28px;
@@ -368,18 +314,12 @@
       letter-spacing: -0.02em;
       margin-bottom: 8px;
     }
-    .trust-label {
-      font-size: 12px;
-      color: var(--grey-500);
-      font-weight: 500;
-      line-height: 1.35;
-    }
+    .trust-label { font-size: 12px; color: var(--grey-500); font-weight: 500; line-height: 1.35; }
 
     /* ====== TRANSCRIPT DRAWER ====== */
     .transcript-drawer {
       position: fixed;
-      bottom: 0;
-      left: 0; right: 0;
+      bottom: 0; left: 0; right: 0;
       max-height: 60vh;
       background: white;
       border-top: 1px solid var(--line);
@@ -390,10 +330,391 @@
       display: flex;
       flex-direction: column;
     }
-    .transcript-drawer.open {
-      transform: translateY(0);
-    }
+    .transcript-drawer.open { transform: translateY(0); }
     .drawer-handle {
       padding: 14px 24px 12px;
       display: flex;
-  
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .drawer-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .drawer-title-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(42, 157, 99, 0.2);
+      animation: pulse 1.5s infinite;
+    }
+    .drawer-meta { font-size: 12px; color: var(--grey-500); font-weight: 500; font-variant-numeric: tabular-nums; }
+    .transcript-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) transparent;
+    }
+    .transcript-body::-webkit-scrollbar { width: 6px; }
+    .transcript-body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+    .bubble {
+      max-width: 78%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 15px;
+      line-height: 1.45;
+      animation: bubbleIn 0.25s ease-out;
+    }
+    .bubble.maya {
+      align-self: flex-start;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      color: var(--navy-deep);
+      border-bottom-left-radius: 4px;
+    }
+    .bubble.user {
+      align-self: flex-end;
+      background: var(--navy-deep);
+      color: var(--cream);
+      border-bottom-right-radius: 4px;
+    }
+    .bubble.partial { opacity: 0.55; }
+    .bubble-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 4px;
+    }
+    .bubble.user .bubble-label { color: var(--cream); }
+    @keyframes bubbleIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .transcript-empty {
+      text-align: center;
+      color: var(--grey-500);
+      font-size: 14px;
+      padding: 32px 12px;
+      font-style: italic;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      padding: 28px 32px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--grey-500);
+      border-top: 1px solid var(--line-soft);
+    }
+    footer a { color: var(--navy); text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+    .footer-row { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-sep { color: var(--line); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      header { padding: 18px 20px; }
+      .logo-tag { display: none; }
+      main { padding: 36px 18px 24px; }
+      h1 { font-size: 36px; }
+      .sub { font-size: 16px; margin-bottom: 32px; }
+      .call-card { padding: 32px 22px 28px; border-radius: 22px; }
+      .call-btn { width: 100px; height: 100px; }
+      .call-btn svg { width: 36px; height: 36px; }
+      .trust-strip { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+      .trust-num { font-size: 24px; }
+      .transcript-drawer { max-height: 65vh; }
+      .bubble { max-width: 88%; font-size: 14px; }
+    }
+    @media (max-width: 440px) {
+      h1 { font-size: 30px; }
+      .header-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark">R</div>
+      <div class="logo-text">
+        <div class="logo-name">Real Dairy Australia</div>
+        <div class="logo-tag">Customer Service · AI Voice</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-badge">
+        <span class="dot"></span>
+        Live demo
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        AI customer service · always on
+      </div>
+
+      <h1>Meet <span class="serif">Maya</span>.<br />Your dairy answers, in seconds.</h1>
+
+      <p class="sub">Maya is Real Dairy's AI customer service voice — she knows our products, our facilities, and how to put you in touch with the right team. Click below to talk to her live in your browser.</p>
+
+      <div class="call-card">
+        <div class="status" id="status">
+          <span class="status-dot"></span>
+          <span id="status-text">Ready to call</span>
+        </div>
+
+        <div class="call-btn-wrap idle" id="callBtnWrap">
+          <button class="call-btn" id="callBtn" aria-label="Start call">
+            <svg id="iconPhone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="call-label" id="callLabel">Call Maya</div>
+        <div class="call-hint" id="callHint">Mic access required · No phone number needed</div>
+
+        <div class="suggestions">
+          <div class="suggestions-title">Try asking</div>
+          <div class="chips">
+            <div class="chip">What products do you stock?</div>
+            <div class="chip">Tell me about your cheese facility</div>
+            <div class="chip">Do you offer contract packing?</div>
+            <div class="chip">Can you ship to Perth?</div>
+            <div class="chip">I need a quote for WPC 80</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-strip">
+        <div class="trust-item">
+          <div class="trust-num">100%</div>
+          <div class="trust-label">Australian owned</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">250+</div>
+          <div class="trust-label">Staff across QLD, NSW, VIC</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">40+</div>
+          <div class="trust-label">Years in dairy supply</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">24/7</div>
+          <div class="trust-label">Available, every day</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="transcript-drawer" id="drawer" aria-live="polite" aria-hidden="true">
+    <div class="drawer-handle">
+      <div class="drawer-title">
+        <span class="drawer-title-dot"></span>
+        Live transcript
+      </div>
+      <div class="drawer-meta" id="drawerMeta">00:00</div>
+    </div>
+    <div class="transcript-body" id="transcript">
+      <div class="transcript-empty" id="emptyState">Maya will start speaking in a moment…</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <span>Built by <a href="https://www.automataai.com.au" target="_blank" rel="noopener">Automata AI</a></span>
+      <span class="footer-sep">·</span>
+      <span>Voice infrastructure by Vapi & ElevenLabs</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import Vapi from "https://esm.sh/@vapi-ai/web@2.3.1";
+
+    const PUBLIC_KEY = "b735e55e-9042-46f0-a474-c57e5c8ae2b1";
+    const ASSISTANT_ID = "c9bf2e7a-536c-466d-9d55-2a0d132f4fa8";
+
+    const vapi = new Vapi(PUBLIC_KEY);
+
+    const btn = document.getElementById("callBtn");
+    const btnWrap = document.getElementById("callBtnWrap");
+    const statusEl = document.getElementById("status");
+    const statusText = document.getElementById("status-text");
+    const label = document.getElementById("callLabel");
+    const hint = document.getElementById("callHint");
+    const icon = document.getElementById("iconPhone");
+    const drawer = document.getElementById("drawer");
+    const drawerMeta = document.getElementById("drawerMeta");
+    const transcript = document.getElementById("transcript");
+
+    const ICON_PHONE = `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`;
+    const ICON_HANGUP = `<line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>`;
+
+    let inCall = false;
+    let callStart = 0;
+    let timerId = null;
+    let lastPartial = { assistant: null, user: null };
+
+    function setState(state) {
+      statusEl.classList.remove("connecting", "live", "ended");
+      btn.classList.remove("connecting", "live");
+      btnWrap.classList.remove("idle");
+
+      if (state === "idle") {
+        statusText.textContent = "Ready to call";
+        label.textContent = "Call Maya";
+        hint.textContent = "Mic access required · No phone number needed";
+        icon.innerHTML = ICON_PHONE;
+        btn.disabled = false;
+        btnWrap.classList.add("idle");
+      } else if (state === "connecting") {
+        statusEl.classList.add("connecting");
+        statusText.textContent = "Connecting…";
+        label.textContent = "Connecting";
+        hint.textContent = "Hang tight — Maya's coming on the line";
+        btn.classList.add("connecting");
+        btn.disabled = true;
+      } else if (state === "live") {
+        statusEl.classList.add("live");
+        statusText.textContent = "Live with Maya";
+        label.textContent = "End call";
+        hint.textContent = "Just speak naturally — she's listening";
+        icon.innerHTML = ICON_HANGUP;
+        btn.classList.add("live");
+        btn.disabled = false;
+      } else if (state === "ended") {
+        statusEl.classList.add("ended");
+        statusText.textContent = "Call ended";
+        label.textContent = "Call Maya again";
+        hint.textContent = "Thanks for trying Maya";
+        icon.innerHTML = ICON_PHONE;
+        btn.disabled = false;
+        setTimeout(() => setState("idle"), 3500);
+      }
+    }
+
+    function openDrawer() {
+      drawer.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+    }
+    function closeDrawer() {
+      drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+    }
+    function clearTranscript() {
+      transcript.innerHTML = '<div class="transcript-empty" id="emptyState">Maya will start speaking in a moment…</div>';
+    }
+
+    function pushTranscript(role, text, isFinal) {
+      const empty = document.getElementById("emptyState");
+      if (empty) empty.remove();
+
+      const cls = role === "assistant" ? "maya" : "user";
+      const lbl = role === "assistant" ? "Maya" : "You";
+
+      let bubble = lastPartial[role];
+      if (!bubble) {
+        bubble = document.createElement("div");
+        bubble.className = `bubble ${cls} partial`;
+        bubble.innerHTML = `<div class="bubble-label">${lbl}</div><div class="bubble-text"></div>`;
+        transcript.appendChild(bubble);
+        lastPartial[role] = bubble;
+      }
+      bubble.querySelector(".bubble-text").textContent = text;
+
+      if (isFinal) {
+        bubble.classList.remove("partial");
+        lastPartial[role] = null;
+      }
+      transcript.scrollTop = transcript.scrollHeight;
+    }
+
+    function startTimer() {
+      callStart = Date.now();
+      drawerMeta.textContent = "00:00";
+      timerId = setInterval(() => {
+        const s = Math.floor((Date.now() - callStart) / 1000);
+        const mm = String(Math.floor(s / 60)).padStart(2, "0");
+        const ss = String(s % 60).padStart(2, "0");
+        drawerMeta.textContent = `${mm}:${ss}`;
+      }, 1000);
+    }
+    function stopTimer() {
+      if (timerId) { clearInterval(timerId); timerId = null; }
+    }
+
+    btn.addEventListener("click", async () => {
+      if (!inCall) {
+        try {
+          setState("connecting");
+          clearTranscript();
+          lastPartial = { assistant: null, user: null };
+          await vapi.start(ASSISTANT_ID);
+        } catch (e) {
+          console.error(e);
+          setState("idle");
+          alert("Couldn't start the call: " + (e.message || e));
+        }
+      } else {
+        vapi.stop();
+      }
+    });
+
+    vapi.on("call-start", () => {
+      inCall = true;
+      setState("live");
+      openDrawer();
+      startTimer();
+    });
+
+    vapi.on("call-end", () => {
+      inCall = false;
+      setState("ended");
+      stopTimer();
+      setTimeout(closeDrawer, 1500);
+    });
+
+    vapi.on("message", (msg) => {
+      if (!msg || msg.type !== "transcript") return;
+      const role = msg.role;
+      const text = (msg.transcript || "").trim();
+      if (!text) return;
+      const isFinal = msg.transcriptType === "final";
+      pushTranscript(role, text, isFinal);
+    });
+
+    vapi.on("error", (e) => {
+      console.error("Vapi error:", e);
+      inCall = false;
+      stopTimer();
+      closeDrawer();
+      setState("idle");
+    });
+
+    setState("idle");
+  </script>
+</body>
+</html>
